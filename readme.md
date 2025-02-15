@@ -47,6 +47,9 @@ wwwroot/
 1. Clone the repository:
     ```sh
     git clone https://github.com/kavindadimuthu/web-server-using-C.git
+    ```
+    
+    ```sh
     cd web-server-using-C
     ```
 
