@@ -48,7 +48,7 @@ wwwroot/
     ```sh
     git clone https://github.com/kavindadimuthu/web-server-using-C.git
     ```
-    
+
     ```sh
     cd web-server-using-C
     ```
@@ -64,7 +64,7 @@ wwwroot/
     ```sh
     ./bin/webserver [port]
     ```
-    If no port is specified, the server will default to port 9090.
+    If no port is specified, the server will default to port 8080.
 
 2. Open a web browser and navigate to `http://localhost:<port>` to see the server in action.
 
