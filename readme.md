@@ -46,8 +46,8 @@ wwwroot/
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/kavindadimuthu/web-server-using-C.git
+    cd web-server-using-C
     ```
 
 2. Build the project using the provided Makefile:
