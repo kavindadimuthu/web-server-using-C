@@ -65,6 +65,13 @@ wwwroot/
 
 2. Open a web browser and navigate to `http://localhost:<port>` to see the server in action.
 
+### Cleaning the Build
+
+To clean the build directory and remove all compiled files, run:
+```sh
+    make clean
+```
+
 ### Project Files
 
 - **Source Files**:
