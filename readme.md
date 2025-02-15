@@ -68,9 +68,9 @@ wwwroot/
 ### Cleaning the Build
 
 To clean the build directory and remove all compiled files, run:
-```sh
+    ```sh
     make clean
-```
+    ```
 
 ### Project Files
 
