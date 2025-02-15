@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - C Web Server Project</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #818cf8;
+            --success: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .nav-header {
+            background: #1f2937;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a.active {
+            color: white;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .about-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-stack ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-stack li {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .nav-link:hover {
+            background: var(--secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">C Web Server</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html" class="active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="container header-content">
+            <h1>About the Project</h1>
+            <p>Understanding the C Web Server Implementation</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-section">
+            <h2>Project Overview</h2>
+            <p>This C Web Server project is a lightweight, efficient implementation of an HTTP server written in C. It
+                demonstrates fundamental web server concepts while maintaining high performance and reliability. The
+                server is designed to handle multiple file types and serve both static and dynamic content efficiently.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Core Features</h3>
+                    <p>HTTP/1.1 protocol support, efficient request handling, and robust error management. Handles
+                        concurrent connections using a multi-threaded architecture.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>File Handling</h3>
+                    <p>Support for multiple file types including HTML, CSS, JavaScript, images, and videos. Implements
+                        proper MIME type detection and content delivery.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Performance</h3>
+                    <p>Optimized for speed and resource efficiency. Implements connection pooling and keeps memory usage
+                        minimal while maintaining stability.</p>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3>Technical Stack</h3>
+                <ul>
+                    <li>Core Language: C</li>
+                    <li>Socket Programming</li>
+                    <li>POSIX Threads</li>
+                    <li>HTTP Protocol</li>
+                    <li>File I/O Operations</li>
+                    <li>Error Handling</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Implementation Details</h2>
+            <p>The server is built using standard C libraries and POSIX-compliant system calls. It implements a thread
+                pool to handle multiple concurrent connections efficiently. The architecture follows a modular design
+                pattern, separating concerns such as request parsing, file handling, and response generation into
+                distinct components.</p>
+
+            <p>Key implementation features include:</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Request Handling</h3>
+                    <p>Robust HTTP request parsing with support for different HTTP methods. Implements proper header
+                        parsing and request validation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Response Generation</h3>
+                    <p>Proper HTTP response formatting with appropriate status codes and headers. Efficient content
+                        delivery with support for chunked transfer encoding.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Security Measures</h3>
+                    <p>Basic security implementations including input validation, path traversal prevention, and proper
+                        error handling to prevent server exploitation.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="navigation">
+            <a href="/404" class="nav-link">Go to 404 error page</a>
+        </div>
+    </main>
+</body>
+
+</html>

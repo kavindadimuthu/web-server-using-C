@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Web Server Assignment</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #818cf8;
+            --success: #22c55e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .nav-header {
+            background: #1f2937;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-links a.active {
+            color: white;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .server-status {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .requirement-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .requirement-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .media-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .media-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .media-item h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .media-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .media-item video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .media-info {
+            background: #f1f5f9;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">C Web Server</a>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="container header-content">
+            <h1>Web Server Assignment</h1>
+            <p>A lightweight and efficient web server implementation in C</p>
+            <div class="server-status">
+                <span class="status-dot"></span>
+                Server running on port 8080
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="requirements-grid">
+            <div class="requirement-card">
+                <div class="requirement-header">
+                    <h3>Basic Server Functionality</h3>
+                </div>
+                <p>Web server successfully runs and serves the same page for all client requests, demonstrating core
+                    functionality and reliable response handling.</p>
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-header">
+                    <h3>Dynamic Content Serving</h3>
+                </div>
+                <p>Server provides different and correct files based on varying client requests, showing advanced
+                    routing capabilities.</p>
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-header">
+                    <h3>Error Handling</h3>
+                </div>
+                <p>Robust error handling implementation for various scenarios including 404 Not Found and 500 Internal
+                    Server Error responses.</p>
+            </div>
+
+            <div class="requirement-card">
+                <div class="requirement-header">
+                    <h3>Multiple File Types</h3>
+                </div>
+                <p>Support for various file types including HTML, CSS, JavaScript, images, and other static assets.</p>
+            </div>
+        </div>
+
+        <div class="media-section">
+            <h2>Media File Handling Demonstration</h2>
+            <div class="media-grid">
+                <div class="media-item">
+                    <h3>Image Handler</h3>
+                    <img src="/img/sample.jpg" alt="Sample Image">
+                    <div class="media-info">
+                        Path: /img/sample.jpg<br>
+                        Content-Type: image/jpeg
+                    </div>
+                </div>
+                <div class="media-item">
+                    <h3>Video Handler</h3>
+                    <video controls>
+                        <source src="/video/sample.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="media-info">
+                        Path: /video/sample.mp4<br>
+                        Content-Type: video/mp4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
